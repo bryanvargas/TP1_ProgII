@@ -1,10 +1,6 @@
 package com.ejercicio.juego.sye;
 
 import java.util.LinkedList;
-
-
-
-
 public final class Juego {
 	 private LinkedList<Jugador > jugadores = new LinkedList<Jugador>();	 
 	 private Tablero tablero = null ;
@@ -52,14 +48,14 @@ public final class Juego {
 
 		 System . out. println ("Estado inicial : \n" + this );
 		 while ( noFinalizado ()) {
-			 int roll = dado . tiro ();
+			 int tiro = dado.tiro ();
 			 System . out. println ("El jugador actual es: " + jugadorActual ()
-					 + " y el tiro del dado es " + roll );
-			 moverJugador ( roll );
-			 System . out. println ("Estado actual: \n" + this );
+					 + " y el tiro del dado es " + tiro );
+			 moverJugador(tiro);
+			 System.out.println("Estado actual: \n" + this );
 		 }
 		 System.out.println("***********************");
-		 System . out. println ("* "+ jugadorGanador + " HA GANADO!!! *");
+		 System.out.println ("* "+ jugadorGanador + " HA GANADO!!! *");
 		 System.out.println("***********************");
 	 }
 

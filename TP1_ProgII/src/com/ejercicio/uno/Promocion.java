@@ -13,7 +13,7 @@ public class Promocion {
 	}
 
 	ListaTuplas<String,String> resolver_ej1(){
-		//implementara
+		//implementar
 		//Se debe pisar listaMateriales.
 		return listaMateriales;
 	}

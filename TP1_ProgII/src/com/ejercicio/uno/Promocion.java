@@ -13,11 +13,11 @@ public class Promocion {
 	}
 
 	ListaTuplas<String,String> resolver_ej1(){
-		//implementaar
+		//implementar
 		//Se debe pisar listaMateriales.
 		return listaMateriales;
 	}
-	
+	//Este es el ejercicio que implemento ALVARO
 	ListaTuplas<String,String> resolver_ej3(){
 		//implementar
 		//Se debe pisar listaMateriales.
@@ -30,12 +30,10 @@ public class Promocion {
 	{
 		String ret = "";
 		Integer precioM1=0;
-		Integer precioM2=0;
-		
+		Integer precioM2=0;		
 		for (int i=0; i<listaMateriales.tamaño(); i++){
 			precioM1 = listaPrecios.buscar(listaMateriales.iesimo(i).getE1());
-			precioM2 = listaPrecios.buscar(listaMateriales.iesimo(i).getE2());
-		
+			precioM2 = listaPrecios.buscar(listaMateriales.iesimo(i).getE2());		
 			if (precioM1 > precioM2){
 				ret = ret + listaMateriales.iesimo(i).getE1().toString() +" "+ precioM1 + "\n";
 			}else{
@@ -43,8 +41,7 @@ public class Promocion {
 			}
 			//ret = ret + listaMateriales.iesimo(i).toString() + "\n";
 			System.out.println("Probar");
-		}
-		
+		}		
 		return ret;
 	}
 	

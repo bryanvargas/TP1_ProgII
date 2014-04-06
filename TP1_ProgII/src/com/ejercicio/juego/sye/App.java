@@ -6,7 +6,7 @@ public final class App {
 	
 	
 	 public static void main ( String [] args ) {	
-	 String [] nombreJugadores = {"Bryan Vargas", "Alvaro"};
+	 String [] nombreJugadores = {"Bryan Vargas", "Alvaro Choque"};
 	 //Aumetar el numero de casilleros del tablero a eleccion
 	 int numCasileros = 12;
 	 //Aumentar la cantidad de serpientes y escaleras a eleccion

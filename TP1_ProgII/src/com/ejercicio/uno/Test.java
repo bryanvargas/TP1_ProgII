@@ -1,7 +1,6 @@
 package com.ejercicio.uno;
 
-import code.ListaTuplas;
-import code.Tupla;
+
 
 
 

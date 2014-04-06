@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 
 
+
+
 public class Promocion {
 	ListaTuplas<String,String> listaMateriales;
 	ListaTuplas<String,Integer> listaPrecios;
@@ -14,9 +16,36 @@ public class Promocion {
 	}
 	
 	ListaTuplas<String,String> resolver_ej1(){
-		//implementar
-		//Se debe pisar listaMateriales.
-		return listaMateriales;
+		
+		ListaTuplas<String, String> bestPromocion= new ListaTuplas<String, String>();
+		ListaTuplas<String, String> bestPromocionFinal= new ListaTuplas<String, String>();
+		for (int i = 0; i < listaMateriales.tamaño(); i++) {
+			for (int j = 0; j < listaMateriales.tamaño(); j++) {
+				if(i!=j && i<j){
+				for (int j2 = 0; j2 < listaMateriales.tamaño(); j2++) {
+					//Se arman la promociones con todas las combinaciones posibles
+					if (j!=j2 && j<j2){
+						bestPromocion.agregar(listaMateriales.iesimo(i));
+						bestPromocion.agregar(listaMateriales.iesimo(j));
+						bestPromocion.agregar(listaMateriales.iesimo(j2));
+						//Se comprueba que en la promocion armada todos los elementos sean distintos
+						if (bestPromocion.norepeatElement()){
+							//Se comprueba si es la promocion que mas conviene
+							bestPromocionFinal= Tool.SaveMoreMoney(bestPromocionFinal, bestPromocion, listaPrecios);
+							//Se descarta la lista que se estaba evaluando para llenarla con otros elementos
+							//a evaluar
+							bestPromocion= new ListaTuplas<String, String>();
+						}
+						else{
+							//Se descarta la lista que contiene elementos repetidos para llenarla
+							//con otros elementos a evaluar que sean distintos
+							bestPromocion= new ListaTuplas<String, String>();
+						}
+				}}}
+			}
+		}
+		this.listaMateriales= bestPromocionFinal;
+		return bestPromocionFinal;
 	}
 	
 	

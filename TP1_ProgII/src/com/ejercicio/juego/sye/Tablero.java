@@ -23,10 +23,10 @@ public final class Tablero {
 		 System.out.println("*******************");
 		 for (int posicion =0 ; posicion < numCasilleros ; posicion ++) {
 			 Casillero casillero = new Casillero ( posicion , this );
-			 casilleros .add ( casillero );
-			 casillero . setRolCasillero ( new LogicaCasilleroRegular ( casillero ));
+			 casilleros.add(casillero);
+			 casillero.setLogicaCasillero(new LogicaCasillero(casillero) );
 		 }
-		 primerCasillero().setRolCasillero(new LogicaPrimerCasillero(primerCasillero()));
+		 primerCasillero();
 	 }
 	
 	 public Casillero primerCasillero () {
@@ -34,13 +34,13 @@ public final class Tablero {
 	 }
 	
 	 public Casillero ultimoCasillero () {
-		 return casilleros.get( casilleros . size () -1);
+		 return casilleros.get(casilleros.size()-1);
 	 }
 	
 	
 	 public Casillero encontrarCasillero ( int posicion ) {
 		 assert ( posicion >0) && ( posicion < numeroCasillas ()) : " inexistent square ";
-		 return casilleros .get( posicion );
+		 return casilleros.get(posicion);
 	 }
 	
 	 private int numeroCasillas() {
@@ -65,7 +65,7 @@ public final class Tablero {
 		 System.out.println("*******************");
 		
 		 Casillero casilleroSerpiente = casilleros . get( posicionDesde );
-		 casilleroSerpiente . setRolCasillero (new LogicaSerpiente ( casilleroSerpiente , transportar ));
+		 casilleroSerpiente.setLogicaCasillero (new LogicaSerpiente ( casilleroSerpiente , transportar ));
 	 	}
 	 }
 	
@@ -86,7 +86,7 @@ public final class Tablero {
 			 + " hasta " + ( posicionHasta +1));
 			
 			 Casillero casilleroEscalera = casilleros.get( posicionDesde );
-			 casilleroEscalera . setRolCasillero ( new LogicaEscalera ( casilleroEscalera , transportar ));
+			 casilleroEscalera.setLogicaCasillero ( new LogicaEscalera ( casilleroEscalera , transportar ));
 		}
 	 }
 }

@@ -6,7 +6,7 @@ public class Casillero {
 	 private Tablero tablero = null ;
 	 private Jugador jugador = null ;
 	 private int posicion ;
-	 private LogicaCasillero rolCasillero = null ;
+	 private LogicaCasillero logicaCasillero = null ;
 	
 	 public Casillero ( int pos , Tablero b) {
 		 //assert pos >=0 : "El numero de casilleros debe ser >= a cero " ;
@@ -26,38 +26,38 @@ public class Casillero {
 		 return posicion ;
 	 }
 	
-	 public void setRolCasillero ( LogicaCasillero sr) {
+	 public void setLogicaCasillero (LogicaCasillero sr) {
 		 assert sr != null ;
-		 rolCasillero = sr;
+		 logicaCasillero = sr;
 	 }
 	
 	 public boolean estaOcupado () {
-	 return rolCasillero.estaOcupado();
+	 return logicaCasillero.estaOcupado();
 	}
 	
 	 public boolean esUltimoCasillero() {
-		 return rolCasillero.esUltimoCasillero();
+		 return logicaCasillero.esUltimoCasillero();
 	 }
 	
-	 public Casillero moveAndLand ( int movimiento ) {
-	 return rolCasillero . moverHastaNuevaPosicion ( movimiento );
+	 public Casillero moverYPosicionar(int movimiento) {
+	 return logicaCasillero . moverHastaNuevaPosicion ( movimiento );
 	 }
 	
-	 public Casillero landHereOrGoHome () {
-		 return rolCasillero . posicionarORetroceder ();
+	 public Casillero posicionarORetroceder () {
+		 return logicaCasillero.posicionarORetroceder ();
 	
 	 }
 	
-	public void ingresar( Jugador p) {
-		rolCasillero.ingresar (p);
+	public void ingresarACasillero(Jugador p) {
+		logicaCasillero.ingresarACasillero (p);
 	 }
 	
-	 public void abandonar( Jugador p) {
-		 rolCasillero.abandonar(p);
+	 public void abandonarCasillero( Jugador p) {
+		 logicaCasillero.abandonarCasillero(p);
 	}
 	
-	 public Casillero encontrarCasilleroRelativo ( int shift ) {
-		return tablero.encontrarCasillero( posicion + shift );
+	 public Casillero encontrarCasilleroRelativo (int desplazamiento ) {
+		return tablero.encontrarCasillero( posicion + desplazamiento );
 	}
 	
 	public Casillero encontrarPrimerCasillero() {

@@ -1,7 +1,7 @@
 package com.ejercicio.juego.sye;
 
 
-public abstract class LogicaCasillero{
+public class LogicaCasillero{
 	 protected Casillero casillero = null ;
 	 protected boolean fin = false ;
 	
@@ -35,8 +35,8 @@ public abstract class LogicaCasillero{
 			  return casillero;
 		  }
 		  else {
-			  System . out. println ("se mueve del " + ( casillero . getPosicion ()+1) + " al "		 
-					  + ( casillero.encontrarCasilleroRelativo( movimiento ). getPosicion ()+1));
+			  System.out.println ("se mueve del " + ( casillero . getPosicion ()+1) + " al "		 
+					  + ( casillero.encontrarCasilleroRelativo(movimiento).getPosicion ()+1));
 			  return casillero.encontrarCasilleroRelativo(movimiento).posicionarORetroceder();
 		  }
 	 }
@@ -51,13 +51,13 @@ public abstract class LogicaCasillero{
 		  return casillero.estaOcupado () ? casillero.encontrarPrimerCasillero() : casillero;
 		  }
 		 
-	 public void ingresar ( Jugador player ) {
-		 casillero.setJugador( player );
-		 player . setCasillero ( casillero );
+	 public void ingresarACasillero(Jugador jugador) {
+		 casillero.setJugador(jugador);
+		 jugador.setCasillero (casillero);
 	  }
 	 
-	  public void abandonar ( Jugador player ) {
-		  casillero . setJugador ( null );
+	  public void abandonarCasillero(Jugador jugador) {
+		  casillero.setJugador ( null );
 	  }
 		  
 }

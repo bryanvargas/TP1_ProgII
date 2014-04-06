@@ -11,11 +11,11 @@ public class Jugador {
 		this.casillero = null;		
 	}
 	
-	public Casillero getCasillero () {
+	public Casillero getCasillero() {
 		 return casillero ;
 	 	}
 		
- 	public void setCasillero ( Casillero casillero ) {
+ 	public void setCasillero(Casillero casillero) {
 		 this.casillero = casillero ;
  		}
  	
@@ -24,8 +24,7 @@ public class Jugador {
  	}
  	
  	public int posicion(){
-		return casillero.getPosicion();
- 		
+		return casillero.getPosicion(); 		
  	}
  	
  	public void avanzar(int movimiento){

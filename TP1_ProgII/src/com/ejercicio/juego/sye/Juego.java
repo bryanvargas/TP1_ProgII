@@ -66,7 +66,7 @@ public final class Juego {
 
 	 public void posicionarJugadoresAlComienzoJuego() {
 		 for ( Jugador player : jugadores ) {
-			 tablero.primerCasillero().ingresar( player );
+			 tablero.primerCasillero().ingresarACasillero( player );
 		 }
 	 }
 

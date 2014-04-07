@@ -2,6 +2,8 @@ package com.ejercicio.juego.sye;
 
 
 
+
+
 public class Casillero {
 	 private Tablero tablero = null ;
 	 private Jugador jugador = null ;
@@ -39,8 +41,8 @@ public class Casillero {
 		 return logicaCasillero.esUltimoCasillero();
 	 }
 	
-	 public Casillero moverYPosicionar(int movimiento) {
-	 return logicaCasillero . moverHastaNuevaPosicion ( movimiento );
+	 public Casillero moverYPosicionar(int tiro) {
+	 return logicaCasillero.moverHastaNuevaPosicion(tiro);
 	 }
 	
 	 public Casillero posicionarORetroceder () {
@@ -49,23 +51,27 @@ public class Casillero {
 	 }
 	
 	public void ingresarACasillero(Jugador p) {
+		
 		logicaCasillero.ingresarACasillero (p);
+		
 	 }
 	
-	 public void abandonarCasillero( Jugador p) {
+	 public void abandonarCasillero(Jugador p) {
 		 logicaCasillero.abandonarCasillero(p);
 	}
 	
-	 public Casillero encontrarCasilleroRelativo (int desplazamiento ) {
-		return tablero.encontrarCasillero( posicion + desplazamiento );
+	 public Casillero encontrarCasilleroRelativo (int tiro ) {
+		return tablero.iesimoCasillero( posicion + tiro );
 	}
 	
-	public Casillero encontrarPrimerCasillero() {
-		return tablero.primerCasillero();
-	 }
+//	public Casillero encontrarPrimerCasillero() {
+//		return tablero.primerCasillero();
+//	 }
 	
-	 public Casillero encontrarUltimoCasillero () {
+	 public Casillero encontrarUltimoCasillero () {		 
 		 return tablero.ultimoCasillero();
 	 }
+
 	 
 }
+

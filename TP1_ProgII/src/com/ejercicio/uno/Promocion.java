@@ -3,9 +3,6 @@ package com.ejercicio.uno;
 import java.util.ArrayList;
 
 
-
-
-
 public class Promocion {
 	ListaTuplas<String,String> listaMateriales;
 	ListaTuplas<String,Integer> listaPrecios;

@@ -18,13 +18,9 @@ public final class LogicaEscalera extends LogicaCasillero {
 		 return destino().posicionarORetroceder();
 	 }
 	
-	 private Casillero destino() {
-		 return casillero . encontrarCasilleroRelativo ( transportar );
+	 public Casillero destino() {
+		 return casillero.encontrarCasilleroRelativo( transportar );
 	 }
 
-	 //solo implementado para que no de error
-	public boolean esElUltimoCasilero() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 }

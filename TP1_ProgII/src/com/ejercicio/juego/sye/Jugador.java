@@ -2,6 +2,8 @@ package com.ejercicio.juego.sye;
 
 
 
+
+
 public class Jugador {
 	private Casillero casillero;
 	private String nomJugador;
@@ -27,10 +29,11 @@ public class Jugador {
 		return casillero.getPosicion(); 		
  	}
  	
- 	public void avanzar(int movimiento){
- 		assert movimiento >0 : "no hay moviientos negativos";
+ 	public void avanzar(int tiro){
+ 		assert tiro >0 : "no hay moviientos negativos";
  		casillero.abandonarCasillero(this);
- 		casillero = casillero.moverYPosicionar(movimiento);
+ 		
+ 		casillero = casillero.moverYPosicionar(tiro);
  		casillero.ingresarACasillero(this);
  		
  	}
@@ -39,8 +42,14 @@ public class Jugador {
  	public String toString() { 		
  		return this.nomJugador;
  	}
+
+	public boolean wins() {
+		return casillero.esUltimoCasillero();
+		
+	}
 	
 	
 	
 
 }
+

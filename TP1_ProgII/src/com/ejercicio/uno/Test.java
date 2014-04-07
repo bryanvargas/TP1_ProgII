@@ -1,9 +1,5 @@
 package com.ejercicio.uno;
 
-
-
-
-
 public class Test {
 
 	public static void test1(){

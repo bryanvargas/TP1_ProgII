@@ -23,9 +23,5 @@ public final class LogicaSerpiente extends LogicaCasillero {
 		  }
 
 	 
-	 //solo implemenado para no dar error
-	public boolean esElUltimoCasilero() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 }

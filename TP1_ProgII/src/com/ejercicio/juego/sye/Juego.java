@@ -11,15 +11,7 @@ public final class Juego {
 			 int [][] serpientes , int [][] escaleras ) {
 		 crearTablero(numCasilleros , escaleras , serpientes);	
 		 crearJugadores(nombreJugadores);
-	 }	 
-	 
-	 public void moverJugador (int tiro ) {
-		 Jugador jugadorActual = jugadores.remove(); 
-		 jugadorActual . avanzar (tiro);
-		 jugadores.add(jugadorActual);
-		 if (jugadorActual.getCasillero()==tablero.ultimoCasillero())			 
-			 jugadorGanador = jugadorActual ;		 
-	}
+	 }	 	
 
 	 public void crearTablero (int numCasilleros , int [][] escaleras ,
 			 int [][] serpientes ) {
@@ -37,8 +29,31 @@ public final class Juego {
 			 i++;			 
 		 }
 		 System.out.println("****************");
-	 }
+	 }	 
 
+	 public void comenzarJuego () {
+		 posicionarJugadoresAlComienzoJuego ();
+		 jugadorGanador = null ;
+	}
+	 
+
+
+	 public void posicionarJugadoresAlComienzoJuego() {
+		 for ( Jugador jugador : jugadores ) {
+			 tablero.primerCasillero().ingresarACasillero( jugador );
+		 }
+	 }
+	 public boolean finalizado() {
+		 System.out.println(jugadorGanador);
+		 return jugadorGanador == null ;
+	 }	
+
+
+	 public Jugador jugadorActual () {
+		 assert jugadores.size () >0;
+		 return jugadores.peek ();
+	 }
+	 
 	 public void play () {
 		 assert ! jugadores . isEmpty () : "No hay jugadores para jugar";
 		 assert tablero != null : "no hay tablero para jugar";
@@ -47,7 +62,7 @@ public final class Juego {
 		 comenzarJuego ();
 
 		 System . out. println ("Estado inicial : \n" + this );
-		 while ( noFinalizado ()) {
+		 while ( finalizado ()) {
 			 int tiro = dado.tiro ();
 			 System . out. println ("El jugador actual es: " + jugadorActual ()
 					 + " y el tiro del dado es " + tiro );
@@ -58,28 +73,20 @@ public final class Juego {
 		 System.out.println ("* "+ jugadorGanador + " HA GANADO!!! *");
 		 System.out.println("***********************");
 	 }
+	 
+	 public void moverJugador (int tiro ) {		 
+		 Jugador jugadorActual = jugadores.remove(); 
+		 jugadorActual.avanzar (tiro);
+		 jugadores.add(jugadorActual);
+//		 if (jugadorActual.getCasillero()==tablero.ultimoCasillero())			 
+//			 jugadorGanador = jugadorActual ;
 
-	 public void comenzarJuego () {
-		 posicionarJugadoresAlComienzoJuego ();
-		 jugadorGanador = null ;
+		 if (jugadorActual.wins ()) {
+			 
+			 jugadorGanador = jugadorActual ;
+		 }
 	}
 
-	 public void posicionarJugadoresAlComienzoJuego() {
-		 for ( Jugador player : jugadores ) {
-			 tablero.primerCasillero().ingresarACasillero( player );
-		 }
-	 }
-
-	 public boolean noFinalizado() {
-		 System.out.println(jugadorGanador);
-		 return jugadorGanador == null ;
-	 }	
-
-
-	 public Jugador jugadorActual () {
-		 assert jugadores.size () >0;
-		 return jugadores.peek ();
-	 }
 	 
 
 	 @Override
@@ -94,3 +101,6 @@ public final class Juego {
 		
 	 }
 }
+
+
+

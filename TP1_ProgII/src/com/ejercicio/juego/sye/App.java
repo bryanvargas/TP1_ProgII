@@ -4,7 +4,7 @@ package com.ejercicio.juego.sye;
 
 public final class App {
 	
-	
+	//nuevo comentario desde Cliente
 	 public static void main ( String [] args ) {	
 	 String [] nombreJugadores = {"Bryan Vargas", "Alvaro Choque"};
 	 //Aumetar el numero de casilleros del tablero a eleccion
